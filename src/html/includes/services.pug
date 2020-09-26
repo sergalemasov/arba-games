@@ -1,0 +1,26 @@
+include ui-divider.pug
+include ui-icon-card.pug
+
+div(class='services')
+    h2(class='services__header') Услуги
+    +ui-divider()(class='services__divider')
+    h3(class='services__sub-header') Услуги которые мы оказываем:
+
+    div(class='services__cards')
+        +ui-icon-card('../img/aplications-development.svg')(class='services__card')
+            h4(class='services__card-header') Разработка приложений
+            ul(class='services__features')
+                li(class='services__feature') Запускаем и развиваем собственные продукты и продукты на заказ
+                li(class='services__feature') Решаем нетривиальные задачи
+        +ui-icon-card('../img/mobile-applications.svg')(class='services__card')
+            h4(class='services__card-header') Мобильные приложения
+            ul(class='services__features')
+                li(class='services__feature') Разрабатываем приложения для разных платформ
+                li(class='services__feature')
+                    span Запускаем и продвигаем проекты
+                    span Рассчитываем стоимость разработки
+        +ui-icon-card('../img/web-development.svg')(class='services__card')
+            h4(class='services__card-header') Разработка сайтов
+            ul(class='services__features')
+                li(class='services__feature') Создаем и разрабатываем сайты
+                li(class='services__feature') От написания технического задания до реализации и тестирования

@@ -1,0 +1,35 @@
+include ui-divider.pug
+include ui-icon-card.pug
+
+div(class='reviews')
+    h2(class='reviews__header') Отзывы о компании
+    +ui-divider()(class='reviews__divider')
+    div(class='reviews__cards')
+        div(class='col-4')
+            +ui-icon-card('../img/review.svg')(class='reviews__card')
+                div(class='reviews__card-content')
+                    div(class='reviews__card-message')
+                        |Заказали в&nbsp;компании ArBa Games приложение. Сделали все грамотно и&nbsp;оперативно,
+                        | с&nbsp;нашими нетривиальными требованиями. Мы&nbsp;остались довольны.
+                        | Благодарим, планируем обратиться вновь.
+                    div(class='reviews__card-author') Иван
+                    div(class='reviews__card-customer') Заказчик Casino Deluxe
+
+        div(class='col-4')
+            +ui-icon-card('../img/review.svg')(class='reviews__card')
+                div(class='reviews__card-content')
+                    div(class='reviews__card-message')
+                        | Нам очень понравилось. Выполнили заказ не&nbsp;только качественно,
+                        | а&nbsp;также предложили внести и&nbsp;реализовали полезные правки.
+                        | Исполнителем очень довольны. Будем работать еще.
+                    div(class='reviews__card-author') Сергей
+                    div(class='reviews__card-customer') Заказчик Слотогонки
+
+        div(class='col-4')
+            +ui-icon-card('../img/review.svg')(class='reviews__card')
+                div(class='reviews__card-content')
+                    div(class='reviews__card-message')
+                        | Порадовали адекватным и&nbsp;грамотным подходом. Отличные цена,
+                        | срок и&nbsp;качество разработки. Рекомендуем как добросовестного подрядчика.
+                    div(class='reviews__card-author') Роман
+                    div(class='reviews__card-customer') Заказчик Luck of Ra

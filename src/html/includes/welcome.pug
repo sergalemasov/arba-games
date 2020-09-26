@@ -1,0 +1,22 @@
+include ui-button.pug
+
+div(class='welcome')
+    h1(class='welcome__header')
+        | Добро пожаловать в компанию
+        |
+        span ArBa Games
+
+    div(class='welcome__icons-bar')
+        img(src='../img/facebook.svg')
+        img(src='../img/vk.svg')
+        img(src='../img/android.svg')
+        img(src='../img/apple.svg')
+        img(src='../img/windows.svg')
+        img(src='../img/phone.svg')
+        img(src='../img/pc.svg')
+
+    div(class='welcome__message')
+        span Разработка для разных платформ:
+        span Desktop, Mobile, Android, IOS, Windows
+
+    +ui-button('сотрудничать')(class='welcome__collaborate-btn', id='collaborate-btn')

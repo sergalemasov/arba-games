@@ -1,0 +1,31 @@
+@import '../vars/colors';
+@import '../vars/mixins';
+
+.ui-button {
+    cursor: pointer;
+    background-color: @button-background-color;
+    border: none;
+    box-sizing: border-box;
+    color: @light-text-color;
+    height: 48px;
+    width: 207px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 4px @button-shadow-color;
+    border-radius: 34px;
+    .transition(background-color);
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:hover,
+    &:active {
+        background-color: @button-hover-background-color;
+    }
+}

@@ -1,0 +1,36 @@
+@import '../vars/colors';
+
+.ui-icon-card {
+    @card-offset-top: 48px;
+
+    position: relative;
+    min-width: 228px;
+
+    &__icon-wrap {
+        @size: 128px;
+        background-color: @blank-color;
+        border: 2px solid @icons-color;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: @size;
+        height: @size;
+        box-sizing: border-box;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__card {
+        box-sizing: border-box;
+        height: calc(100% - @card-offset-top);
+        margin-top: @card-offset-top;
+        background: @blank-color;
+        box-shadow: 0px 4px 4px @card-shadow-color;
+        border-radius: 25px;
+        padding: 100px 20px 20px;
+        border-radius: 25px;
+    }
+}

@@ -1,0 +1,27 @@
+@import '../vars/colors.less';
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+        color: @secondary-text-color;
+    }
+
+    &__divider {
+        margin: 12px 0 24px;
+    }
+
+    &__pane {
+        background-color: @blank-color;
+        box-shadow: inset 0px 0px 4px @card-shadow-color;
+        border-radius: 34px;
+        padding: 4px 4px 4px 25px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

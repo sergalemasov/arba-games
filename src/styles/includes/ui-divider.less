@@ -1,0 +1,26 @@
+@import '../vars/colors';
+
+.ui-divider {
+    @size: 4px;
+    width: 38px;
+    display: flex;
+    justify-content: space-between;
+
+    &__circle,
+    &__rectangle {
+        flex-shrink: 0;
+        background-color: @icons-color;
+    }
+
+    &__circle {
+        width: @size;
+        height: @size;
+        border-radius: 50%;
+    }
+
+    &__rectangle {
+        height: @size;
+        width: 18px;
+        border-radius: 15px;
+    }
+}

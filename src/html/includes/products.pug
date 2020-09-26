@@ -1,0 +1,13 @@
+include ui-divider.pug
+
+div(class='products')
+    div(class='products__heading-wrap')
+        h2(class='products__header') Наши продукты
+        +ui-divider()(class='products__divider')
+        h1(class='products__current-product')
+    div(class='products__carousel')
+        div(class='owl-carousel owl-theme')
+            div(class='products__banner products__banner--1', data-name='Casino Deluxe', data-href='#ссылка_на_casino_deluxe')
+            div(class='products__banner products__banner--2', data-name='Слото Гонки', data-href='#ссылка_на_слото_гонки')
+            div(class='products__banner products__banner--3', data-name='Luck Of Ra', data-href='#ссылка_на_luck_of_ra')
+    div(class='products__carousel-dots')

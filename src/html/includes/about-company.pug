@@ -1,0 +1,11 @@
+include ui-divider.pug
+include ui-icon-card.pug
+
+div(class='about-company')
+    h2(class='about-company__header') О компании
+    +ui-divider()(class='about-company__divider')
+    +ui-icon-card('../img/team.svg')(class='about-company__card')
+        div(class='about-company__card-message')
+            | Мы&nbsp;&mdash; команда профессионалов, которые любят свое дело.
+            | Наши игры&nbsp;&mdash; не&nbsp;бездушный код, это живые люди, профессионалы,
+            | которые вкладывают в&nbsp;продукт частичку себя.

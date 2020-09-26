@@ -1,0 +1,51 @@
+@import '../vars/colors.less';
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__cards {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__header {
+        color: @secondary-text-color;
+    }
+
+    &__divider {
+        margin: 12px 0 24px;
+    }
+
+    &__card {
+        height: 100%;
+    }
+
+    &__card-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__card-message,
+    &__card-author,
+    &__card-customer {
+        text-align: center;
+    }
+
+    &__card-message {
+        margin-bottom: 20px;
+    }
+
+    &__card-author {
+        margin-top: auto;
+        margin-bottom: 3px;
+    }
+
+    &__card-customer {
+        font-size: 14px;
+        line-height: 16px;
+        color: @reviews-customer-text-color;
+    }
+}

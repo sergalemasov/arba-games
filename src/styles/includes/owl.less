@@ -1,0 +1,22 @@
+@import '../vars/colors';
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot.active:hover span {
+    background-color: transparent;
+    border: 1px solid @icons-color;
+}
+
+.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: darken(@icons-color, 4%);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background-color: @icons-color;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 30px;
+}
