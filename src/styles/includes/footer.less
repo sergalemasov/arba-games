@@ -2,13 +2,68 @@
 @import '../vars/dimensions';
 
 .footer {
-    height: 44px;
-    background: linear-gradient(@footer-first-background-color, @footer-second-background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 53px;
+    margin-top: 98px;
+    position: relative;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.05);
+    min-width: @content-width-lg;
+    background: @blank-color;
 
-    &__message {
-        color: @footer-message-color;
+    &__content {
+        position: relative;
+        height: 100%;
+        background: @blank-color;
+        align-items: center;
+        width: @content-width-lg;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo-wrap {
+        @width: 226px;
+        @height: 60px;
+        border-top-left-radius: @width @height * 2;
+        border-top-right-radius: @width @height * 2;
+        width: @width;
+        height: @height;
+        position: absolute;
+        left: 50%;
+        top: -48px;
+        background: @blank-color;
+        transform: translateX(-50%);
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: " ";
+            border-top-left-radius: @width @height * 2;
+            border-top-right-radius: @width @height * 2;
+            width: @width;
+            height: @height;
+            box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        width: 194px;
+        height: 93px;
+        left: 50%;
+        transform: translateX(calc(-50% + 6px));
+        bottom: 0;
+    }
+
+    &__nav-btn {
+        &:not(:last-child) {
+            margin-right: 48px;
+        }
+    }
+
+    &__nav-group {
+        &--first {
+            margin-left: 361px;
+            margin-right: 344px;
+        }
     }
 }

@@ -3,128 +3,31 @@
 @import '../vars/mixins.less';
 
 .index-main {
-    overflow: hidden;
-    position: relative;
+    background-image: url(../img/first-background.svg), url(../img/second-background.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 835px, 100% 1068px;
+    background-position: 0 207px, 0 1206px;
+    min-width: @content-width-lg;
 
-    &__background {
-        background-image: url(../img/bg.png);
-        background-repeat: no-repeat;
-        background-position-y: -80px;
-        position: absolute;
-        width: 1920px;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 100%;
-        z-index: 0;
-
-        @media (max-width: @content-width-md) {
-            background-position-y: 0;
-        }
-    }
-
-    &__overlay {
-        background-color: @main-overlay-background-color;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        transition: background-color 0.1s ease;
-
-        @media (max-width: @content-width-md) {
-            background-color: @main-overlay-background-color-md;
-        }
-    }
-
-    &__content {
-        max-width: @content-width-lg;
-        margin: 0 auto;
-        flex: 1;
+    &__section {
         position: relative;
-        height: 100%;
-    }
+        margin-bottom: 40px;
 
-    &__message {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 37px;
-        text-transform: uppercase;
-        text-align: center;
-        color: @main-message-front-color;
-        text-shadow: 2px 0 0 @main-message-back-color;
-        margin: 76px auto 0;
-        padding: 0 50px;
-    }
-
-    &__play {
-        .no-tap-highlight();
-        width: 400px;
-        height: 102px;
-        background: url(../img/play.png) no-repeat;
-        margin: 24px auto 0;
-        transform: translateX(2px);
-        display: block;
-    }
-
-    &__phone {
-        position: relative;
-        height: 700px;
-        width: 419px;
-        margin: 12px auto 0;
-        transform: translateX(5px);
-        background-image: url('../img/phone.png');
-        background-repeat: no-repeat;
-
-        @media (max-width: @content-width-md) {
-            height: 745px;
+        &--centered {
+            width: @content-width-lg;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 
-    &__car {
-        &_high-lvl {
-            transform: translateX(calc(-50% + 194px));
-            top: 250px;
-            width: 811px;
-            height: 268px;
-            background-image: url('../img/car-highlvl.png');
-        }
-
-        &_low-lvl {
-            transform: translateX(calc(-50% - 252px));
-            top: 271px;
-            width: 697px;
-            height: 246px;
-            background-image: url('../img/car-lowlvl.png');
-        }
-    }
-
-    &__character {
-        top: 126px;
-
-        &_high-lvl {
-            transform: translateX(calc(-50% + 314px));
-            width: 318px;
-            height: 798px;
-            background-image: url('../img/character-highlvl.png');
-        }
-
-        &_low-lvl {
-            transform: translateX(calc(-50% - 312px));
-            width: 323px;
-            height: 798px;
-            background-image: url('../img/character-lowlvl.png');
-        }
-    }
-
-    &__car,
-    &__character {
-        background-repeat: no-repeat;
+    &__widgets {
         position: absolute;
-        left: 50%;
-        opacity: 1;
-        transition: opacity 0.1s ease;
+        top: -@header-height;
+        left: 755px;
+    }
 
-        @media (max-width: @content-width-md) {
-            opacity: 0;
-        }
+    &__welcome {
+        margin-top: 240px;
+        margin-bottom: 155px;
     }
 }

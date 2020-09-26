@@ -1,7 +1,6 @@
 (function (app) {
     function bootstrap() {
-        app.init();
-        app.header.init();
+        app.owl.init();
     }
 
     window.onload = bootstrap;

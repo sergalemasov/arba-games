@@ -1,4 +1,5 @@
-@import '../vars/colors.less';
+@import '../vars/colors';
+@import '../vars/mixins';
 
 body {
     font-weight: 400;
@@ -6,34 +7,85 @@ body {
     font-size: 18px;
     line-height: 21px;
     background-color: @body-background-color;
+    color: @primary-text-color;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+    .no-tap-highlight();
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 41px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
 }
 
 @cols: 12;
 @gutter: 50px;
 @container-width: 100%;
 
-[class^="col-"] {
-    box-sizing: border-box; // Se to border-box for padding and borders to count as width
-    // Set flex-grow and shrink to 0 so that these columns always have the size we tell them in the loop
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding-right: @gutter / 2; // Set paddings to half the gutter for a little spacing
-    padding-left: @gutter / 2;
-}
-
 .generateCols(@counter) when (@counter > 0) {
     @width: (@counter / @cols ) * 100;
-    .col-@{counter} {
-        flex-basis: ~"@{width}%";
-        max-width: ~"@{width}%";
-      }
 
-      // After our main columns
-      // add this to create our offset columns
-      .col-offset-@{counter} {
-        margin-left: ~"@{width}%";
-      }
- .generateCols((@counter - 1));
+    .col-@{counter} {
+        flex-basis:~"@{width}%";
+        max-width:~"@{width}%";
+
+        box-sizing: border-box; // Se to border-box for padding and borders to count as width
+        // Set flex-grow and shrink to 0 so that these columns always have the size we tell them in the loop
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding-right: @gutter / 2; // Set paddings to half the gutter for a little spacing
+        padding-left: @gutter / 2;
+    }
+
+    // After our main columns
+    // add this to create our offset columns
+    .col-offset-@{counter} {
+        margin-left:~"@{width}%";
+    }
+
+    .generateCols((@counter - 1));
 }
+
 // Call our loop
 .generateCols(@cols);

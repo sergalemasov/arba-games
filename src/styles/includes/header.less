@@ -3,11 +3,36 @@
 @import '../vars/mixins.less';
 
 .header {
-    height: 97px;
+    height: @header-height;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 
     &__content {
         display: flex;
         width: @content-width-lg;
+        height: 100%;
         margin: 0 auto;
+        align-items: center;
+    }
+
+    &__logo {
+        align-self: flex-start;
+    }
+
+    &__nav {
+        display: flex;
+    }
+
+    &__nav-btn {
+        display: block;
+
+        &:not(:last-child) {
+            margin-right: 48px;
+        }
+
+        &--light {
+            color: @light-text-color;
+        }
     }
 }

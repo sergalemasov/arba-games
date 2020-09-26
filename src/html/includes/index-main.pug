@@ -1,12 +1,19 @@
 main(class='index-main')
-    div(class='index-main__background')
-    div(class='index-main__overlay')
-    div(class='index-main__content')
-        div(class='index-main__message')
-            | помоги братишке стать крутым
-        a(class='index-main__play' href='#play')
-        div(class='index-main__car index-main__car_high-lvl')
-        div(class='index-main__car index-main__car_low-lvl')
-        div(class='index-main__character index-main__character_low-lvl')
-        div(class='index-main__character index-main__character_high-lvl')
-        div(class='index-main__phone')
+    div(class='index-main__background index-main__background--first')
+        div(class='index-main__background index-main__background--second')
+            section(class='index-main__section index-main__section--centered clearfix')
+                include widgets.pug
+                div(class='index-main__welcome col-offset-1 col-5')
+                    include welcome.pug
+            section(class='index-main__section index-main__section--centered clearfix')
+                div(class='col-offset-1 col-10')
+                    include services.pug
+            section(class='index-main__section clearfix')
+                include products.pug
+            section(class='index-main__section index-main__section--centered clearfix')
+                include about-company.pug
+            section(class='index-main__section index-main__section--centered clearfix')
+                include reviews.pug
+            section(class='index-main__section index-main__section--centered clearfix')
+                div(class='col-offset-3 col-6')
+                    include questions.pug

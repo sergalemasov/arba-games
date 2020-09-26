@@ -1,33 +1,13 @@
+include ui-button.pug
+
 header(class='header')
     div(class='header__content')
-        div(class='col-offset-1 col-2')
-    //- div(class='header__content')
-    //-     a(href='mailto:i9225091467@gmail.com')
-    //-         div(class='header__mail')
-    //-     a(href='index.html' class='header__logo-wrap')
-    //-         div(class='header__logo')
-    //-     div(class='header__nav')
-    //-         if isPrivacyPolicy
-    //-             div(class='header-nav-btn header-nav-btn_active')
-    //-                 span ПОЛИТИКА
-    //-                 span КОНФИДЕН.
-    //-         else
-    //-             a(class='header-nav-btn' href='privacy-policy.html')
-    //-                 span ПОЛИТИКА
-    //-                 span КОНФИДЕН.
-    //-         a(class='header-nav-btn' href='mailto:i9225091467@gmail.com')
-    //-             span ПОДДЕРЖКА
-    //-     div(class='header__burger header-burger' id='header-burger')
-    //-         div(class='header-burger__chunk')
-    //-         div(class='header-burger__chunk')
-    //-         div(class='header-burger__chunk')
-    //-     div(class='header__dropdown header-dropdown' id='header-dropdown')
-    //-         if isPrivacyPolicy
-    //-             div(class='header-nav-btn header-nav-btn_active')
-    //-                 span ПОЛИТИКА КОНФИДЕН.
-    //-         else
-    //-             a(class='header-nav-btn' href='privacy-policy.html')
-    //-                 span ПОЛИТИКА КОНФИДЕН.
-    //-         a(class='header-nav-btn' href='mailto:i9225091467@gmail.com')
-    //-             span ПОДДЕРЖКА
-
+        div(class='col-offset-1 col-2 header__logo')
+            img(src='../img/logo.svg')
+        div(class='col-offset-2 col-5 header__nav')
+            a(class='header__nav-btn' href='#') Услуги
+            a(class='header__nav-btn' href='#') Продукты
+            a(class='header__nav-btn header__nav-btn--light' href='#') Контакты
+            a(class='header__nav-btn header__nav-btn--light' href='#') О компании
+        div(class='col-2')
+            +ui-button('связаться')(id='call-btn')

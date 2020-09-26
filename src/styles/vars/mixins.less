@@ -5,5 +5,11 @@
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-     user-select: none;
+    user-select: none;
+}
+
+.transition(@property) {
+    transition-duration: .1s;
+    transition-property: @property;
+    transition-timing-function: ease;
 }
