@@ -1,0 +1,15 @@
+@import '../vars/colors';
+
+.header-dropdown {
+    display: none;
+    border: 4px solid @header-nav-dropdown-border-color;
+    border-right: none;
+
+    @media (max-width: @content-width-md) {
+        display: none;
+
+        &_visible {
+            display: block;
+        }
+    }
+}

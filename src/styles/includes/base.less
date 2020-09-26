@@ -1,0 +1,39 @@
+@import '../vars/colors.less';
+
+body {
+    font-weight: 400;
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    background-color: @body-background-color;
+}
+
+@cols: 12;
+@gutter: 50px;
+@container-width: 100%;
+
+[class^="col-"] {
+    box-sizing: border-box; // Se to border-box for padding and borders to count as width
+    // Set flex-grow and shrink to 0 so that these columns always have the size we tell them in the loop
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-right: @gutter / 2; // Set paddings to half the gutter for a little spacing
+    padding-left: @gutter / 2;
+}
+
+.generateCols(@counter) when (@counter > 0) {
+    @width: (@counter / @cols ) * 100;
+    .col-@{counter} {
+        flex-basis: ~"@{width}%";
+        max-width: ~"@{width}%";
+      }
+
+      // After our main columns
+      // add this to create our offset columns
+      .col-offset-@{counter} {
+        margin-left: ~"@{width}%";
+      }
+ .generateCols((@counter - 1));
+}
+// Call our loop
+.generateCols(@cols);
