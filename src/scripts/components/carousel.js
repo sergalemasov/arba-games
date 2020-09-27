@@ -35,10 +35,6 @@
         this.carousel.on('changed.owl.carousel', function(event) {
             this.setCurrentProductByIndex(event.page.index);
         }.bind(this));
-
-        this.carousel.on('click', '.products__banner', function (event) {
-            window.location = event.target.dataset.href;
-        });
     }
 
     Carousel.prototype.extractProductNames = function() {
