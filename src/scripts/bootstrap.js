@@ -1,6 +1,13 @@
 (function (app) {
     function bootstrap() {
-        app.owl.init();
+        [
+            app.carousel,
+            app.scroll,
+            app.header,
+            app.footer
+        ].forEach(function (entity) {
+            entity.init();
+        });
     }
 
     window.onload = bootstrap;

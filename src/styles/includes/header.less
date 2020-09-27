@@ -26,6 +26,13 @@
 
     &__nav-btn {
         display: block;
+        cursor: pointer;
+        .no-tap-highlight();
+        .transition(color);
+
+        &:hover {
+            color: lighten(@primary-text-color, 20%)
+        }
 
         &:not(:last-child) {
             margin-right: 48px;
@@ -33,6 +40,10 @@
 
         &--light {
             color: @light-text-color;
+
+            &:hover {
+                color: darken(@light-text-color, 10%);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 @import '../vars/colors';
 @import '../vars/dimensions';
+@import '../vars/mixins';
 
 .footer {
     height: 53px;
@@ -55,8 +56,17 @@
     }
 
     &__nav-btn {
+        .transition(color);
+        cursor: pointer;
+        display: inline-flex;
+        .no-tap-highlight();
+
         &:not(:last-child) {
             margin-right: 48px;
+        }
+
+        &:hover {
+            color: lighten(@primary-text-color, 20%)
         }
     }
 

@@ -5,9 +5,10 @@ header(class='header')
         div(class='col-offset-1 col-2 header__logo')
             img(src='../img/logo.svg')
         div(class='col-offset-2 col-5 header__nav')
-            a(class='header__nav-btn' href='#') Услуги
-            a(class='header__nav-btn' href='#') Продукты
-            a(class='header__nav-btn header__nav-btn--light' href='#') Контакты
-            a(class='header__nav-btn header__nav-btn--light' href='#') О компании
+            div(class='header__nav-btn', id='header__services') Услуги
+            div(class='header__nav-btn', id='header__products') Продукты
+            a(class='header__nav-btn header__nav-btn--light' href='mailto:arbagames@yandex.ua') Контакты
+            div(class='header__nav-btn header__nav-btn--light', id='header__about-company') О компании
         div(class='col-2')
-            +ui-button('связаться')(id='call-btn')
+            a(href='mailto:arbagames@yandex.ua')
+                +ui-button('связаться')

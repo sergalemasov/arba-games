@@ -1,7 +1,7 @@
 (function (app, $) {
-    function Owl() {}
+    function Carousel() {}
 
-    Owl.prototype.init = function() {
+    Carousel.prototype.init = function() {
         this.storeDOMElements();
         this.extractProductNames();
         this.setupCarousel();
@@ -9,13 +9,13 @@
         this.setInitialProductName();
     }
 
-    Owl.prototype.storeDOMElements = function() {
+    Carousel.prototype.storeDOMElements = function() {
         this.carousel = $('.owl-carousel');
         this.bannerElements = $('.products__banner');
         this.currentProductElement = $('.products__current-product');
     }
 
-    Owl.prototype.setupCarousel = function() {
+    Carousel.prototype.setupCarousel = function() {
         var options = {
             loop: true,
             margin: 30,
@@ -31,7 +31,7 @@
         this.carousel.owlCarousel(options);
     }
 
-    Owl.prototype.addEventListeners = function() {
+    Carousel.prototype.addEventListeners = function() {
         this.carousel.on('changed.owl.carousel', function(event) {
             this.setCurrentProductByIndex(event.page.index);
         }.bind(this));
@@ -41,19 +41,19 @@
         });
     }
 
-    Owl.prototype.extractProductNames = function() {
+    Carousel.prototype.extractProductNames = function() {
         this.productNames = $.map(this.bannerElements, function(element) {
             return element.dataset.name;
         });
     }
 
-    Owl.prototype.setCurrentProductByIndex = function (index) {
+    Carousel.prototype.setCurrentProductByIndex = function (index) {
         this.currentProductElement.html(this.productNames[index]);
     }
 
-    Owl.prototype.setInitialProductName = function () {
+    Carousel.prototype.setInitialProductName = function () {
         this.setCurrentProductByIndex(0);
     }
 
-    app.owl = new Owl();
+    app.carousel = new Carousel();
 })(app, $);
